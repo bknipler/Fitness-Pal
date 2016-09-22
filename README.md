@@ -4,7 +4,7 @@ This is a team project for Deakin University unit SIT313 Mobile Computing. The p
 The team consists of:
 
 Avi Shreshtha
-Stephen Pilakis - 21314252
+Stephen Pilakis - 213142452
 Brandon Knipler - 213362619
 
 The project uses several interfaces to display its information. The interfaces are implemented using the MVVM structure.
