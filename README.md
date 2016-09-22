@@ -64,4 +64,10 @@ Resources
   footsteps.png = Should be in demo.gif's spot
   icon.png - Needs to be replaces with current icon.
   
+Update #1
 
+Added a splash screen (Added SplashActivity.cs and made it the main launcher, this activity displays the splash screen the goes to StepCountSensor.cs once the app is loaded. Added the splashscreen image and xml code in android drawable and created a custom theme to display the splash screen.
+
+Replace default icon with new one.
+
+Replaced place holder images with proper images
