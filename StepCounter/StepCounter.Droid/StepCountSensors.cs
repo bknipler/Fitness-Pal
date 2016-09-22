@@ -15,7 +15,8 @@ using Android.Content.PM;
 
 namespace StepCounter.Droid
 {
-    [Activity(Label = "StepCounter", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "StepCounter", Icon = "@drawable/icon", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
+    ScreenOrientation = ScreenOrientation.Portrait)]
     public class StepCountSensors : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, ISensorEventListener, INotifyPropertyChanged
     {
         protected override void OnCreate(Bundle bundle)

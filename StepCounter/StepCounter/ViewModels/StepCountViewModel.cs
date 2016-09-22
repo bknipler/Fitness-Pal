@@ -52,16 +52,20 @@ namespace StepCounter.ViewModels
             }
         }
 
-        public string Demo { get; set; }
-        public string Demo2 { get; set; }
+        public string Banner { get; set; }
+        public string Flame { get; set; }
+        public string FootPrints { get; set; }
 
         public StepCountViewModel()
         {
             StepGoal = "Goal: " + "0";
             CalorieCount = "Todays Calories: " + "0";
             CalorieGoal = "Goal: " + "0";
-            Demo = "demo.gif";
-            Demo2 = "demo2.gif";
+
+            //Images
+            Banner = "banner.png";
+            Flame = "flame.png";
+            FootPrints = "footsteps.png";
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {

@@ -6,20 +6,20 @@
              Title="Main">
 
   <StackLayout>
-  <Image Source="banner.png" Aspect="AspectFit" />
+  <Image Source="{Binding Banner}" Aspect="AspectFit" />
   
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="50" />
-      <RowDefinition Height="Auto" />
+      <RowDefinition Height="150" />
       <RowDefinition Height="50" />
-      <RowDefinition Height="Auto" />
+      <RowDefinition Height="150" />
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="20" />
-      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="150" />
       <ColumnDefinition Width="15" />
-      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="150" />
     </Grid.ColumnDefinitions>
     
     <StackLayout Grid.Row="1" Grid.Column="3">
@@ -43,11 +43,11 @@
        VerticalOptions="CenterAndExpand"/>
        </StackLayout >
     
-    <Image Source="{Binding Demo}" 
+    <Image Source="{Binding FootPrints}" Aspect="AspectFit"
            Grid.Row="1"
            Grid.Column="1" />
 
-    <Image Source="{Binding Demo2}"
+    <Image Source="{Binding Flame}" Aspect="AspectFit"
        Grid.Row="3"
        Grid.Column="1" />
             
