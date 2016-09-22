@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:StepCounter;assembly=StepCounter"
+             x:Class="StepCounter.Views.Goals">
+
+  <StackLayout>
+    <Image Source="banner.png" Aspect="AspectFit" />
+
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+        <Label Text="{Binding Goal}"
+         HorizontalOptions="Center"
+         VerticalOptions="CenterAndExpand"
+         Grid.Row="0"
+         Grid.Column="0" />
+
+      <local:BindablePicker ItemsSource="{Binding Cats}" SelectedItem="{Binding SelectedCat}"/>
+
+
+
+      <Label Text="{Binding StepGoal}"
+         HorizontalOptions="Center"
+         VerticalOptions="CenterAndExpand"/>
+
+        <Label Text="{Binding CalorieCount}"
+        HorizontalOptions="Center"
+        VerticalOptions="CenterAndExpand"/>
+
+        <Label Text="{Binding CalorieGoal}"
+        HorizontalOptions="Center"
+        VerticalOptions="CenterAndExpand"/>
+      
+    </Grid>
+  </StackLayout>
+</ContentPage>

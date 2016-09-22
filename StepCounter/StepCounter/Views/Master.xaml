@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:StepCounter.Views;assembly=StepCounter"
+             x:Class="StepCounter.Views.Master">
+  
+  <MasterDetailPage.Master>
+    <ContentPage Title="Menu">
+      <StackLayout Orientation="Vertical">
+        <Button Text="rand" Clicked="OnButtonClickedRand" />
+      </StackLayout>
+    </ContentPage>
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <views:StepCountPage/>
+  </MasterDetailPage.Detail>
+  </MasterDetailPage>
