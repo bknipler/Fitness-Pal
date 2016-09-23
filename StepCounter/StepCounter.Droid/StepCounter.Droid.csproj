@@ -145,12 +145,6 @@
     <AndroidResource Include="Resources\drawable\banner.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\demo.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\demo2.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\flame.png" />
   </ItemGroup>
   <ItemGroup>

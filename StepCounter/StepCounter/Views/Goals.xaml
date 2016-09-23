@@ -2,48 +2,80 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:StepCounter;assembly=StepCounter"
+             xmlns:models="clr-namespace:StepCounter.Models;assembly=StepCounter"
              x:Class="StepCounter.Views.Goals">
 
   <StackLayout>
-    <Image Source="banner.png" Aspect="AspectFit" />
-
+    <Image Source="{Binding Banner}" Aspect="AspectFit" />
+    
     <Grid>
       <Grid.RowDefinitions>
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
-        <RowDefinition Height="Auto" />
+        <RowDefinition Height="50" />
+        <RowDefinition Height="50" />
+        <RowDefinition Height="50" />
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="50" />
+        <ColumnDefinition Width="100" />
+        <ColumnDefinition Width="100" />
+        <ColumnDefinition Width="100" />
       </Grid.ColumnDefinitions>
-
-        <Label Text="{Binding Goal}"
-         HorizontalOptions="Center"
-         VerticalOptions="CenterAndExpand"
-         Grid.Row="0"
-         Grid.Column="0" />
-
-      <local:BindablePicker ItemsSource="{Binding Cats}" SelectedItem="{Binding SelectedCat}"/>
-
-
-
-      <Label Text="{Binding StepGoal}"
-         HorizontalOptions="Center"
-         VerticalOptions="CenterAndExpand"/>
-
-        <Label Text="{Binding CalorieCount}"
-        HorizontalOptions="Center"
-        VerticalOptions="CenterAndExpand"/>
-
-        <Label Text="{Binding CalorieGoal}"
-        HorizontalOptions="Center"
-        VerticalOptions="CenterAndExpand"/>
       
+      <Label Text="{Binding GoalLabel}"
+       Grid.Row="0"
+       Grid.Column="0" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+      
+      <Entry Placeholder="Steps" Text="{Binding EntrySteps}"
+       Grid.Row="0"
+       Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+      
+      <Entry Placeholder="Distance" Text="{Binding EntryDistance}"
+       Grid.Row="0"
+       Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+      
+      <Entry Placeholder="Calories" Text="{Binding EntryCalories}"
+       Grid.Row="0"
+       Grid.Column="3"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>      
+
+       <Label Text="{Binding GoalsLabel}"
+       Grid.Row="1"
+       Grid.Column="0" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+      
+      <Label Text="{Binding CurrentLabel}"
+       Grid.Row="2"
+       Grid.Column="0" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+
+      <Label Text="{Binding StepsLabel}"
+       Grid.Row="1"
+       Grid.Column="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+
+      <Label Text="{Binding DistanceLabel}"
+       Grid.Row="1"
+       Grid.Column="2" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+
+      <Label Text="{Binding CaloriesLabel}"
+       Grid.Row="1"
+       Grid.Column="3" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+      
+      <Label Text="{Binding CurrentStepsLabel}"
+       Grid.Row="2"
+       Grid.Column="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+
+      <Label Text="{Binding CurrentDistanceLabel}"
+       Grid.Row="2"
+       Grid.Column="2" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+
+      <Label Text="{Binding CurrentCaloriesLabel}"
+       Grid.Row="2"
+       Grid.Column="3" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+
     </Grid>
+    
+        <Button Text="Save Goals"
+        Command="{Binding GoalsCommand}"/>
+    
+      <Button Text="Home"
+    Command="{Binding Home}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+  
   </StackLayout>
 </ContentPage>

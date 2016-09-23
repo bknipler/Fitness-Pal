@@ -1,73 +1,148 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Dynamic;
 using System.Windows.Input;
+using StepCounter.Models;
 using Xamarin.Forms;
 
 namespace StepCounter.ViewModels
 {
     public class GoalsViewModel : INotifyPropertyChanged
     {
-        private string _stepCount;
-        private string _stepGoal;
-        private string _calorieCount;
-        private string _calorieGoal;
+        private string _distanceLabel;
+        private string _caloriesLabel;
+        private string _stepsLabel;
+        private string _currentStepsLabel;
+        private string _currentDistanceLabel;
+        private string _currentCaloriesLabel;
 
-        public string StepCount
+        public string Banner { get; set; }
+        public string GoalLabel { get; set; }
+
+        public string EntrySteps { get; set; }
+
+        public string EntryDistance { get; set; }
+
+        public string EntryCalories { get; set; }
+
+        public string EntryWeight { get; set; }
+
+        public string GoalsLabel { get; set; }
+
+        public string CurrentLabel { get; set; }
+
+
+        public string CurrentStepsLabel
         {
-            get { return _stepCount; }
+            get { return _currentStepsLabel; }
             set
             {
-                _stepCount = value;
-                OnPropertyChanged("StepCount");
+                _currentStepsLabel = value;
+                OnPropertyChanged("CurrentStepsLabel");
+
             }
         }
 
-        public string StepGoal
+        public string CurrentDistanceLabel
         {
-            get { return _stepGoal; }
+            get { return _currentDistanceLabel; }
             set
             {
-                _stepGoal = value;
-                OnPropertyChanged("StepGoal");
+                _currentDistanceLabel = value;
+                OnPropertyChanged("CurrentDistanceLabel");
+
             }
         }
 
-        public string CalorieCount
+        public string CurrentCaloriesLabel
         {
-            get { return _calorieCount; }
+            get { return _currentCaloriesLabel; }
             set
             {
-                _calorieCount = value;
-                OnPropertyChanged("CalorieCount");
+                _currentCaloriesLabel = value;
+                OnPropertyChanged("CurrentCaloriesLabel");
+
             }
         }
 
-        public string CalorieGoal
+        public string DistanceLabel
         {
-            get { return _calorieGoal; }
+            get { return _distanceLabel; }
             set
             {
-                _calorieGoal = value;
-                OnPropertyChanged("CalorieGoal");
+                _distanceLabel = value;
+                OnPropertyChanged("DistanceLabel");
             }
         }
 
-        public string Demo { get; set; }
-        public string Demo2 { get; set; }
+        public string CaloriesLabel
+        {
+            get { return _caloriesLabel; }
+            set
+            {
+                _caloriesLabel = value;
+                OnPropertyChanged("CaloriesLabel");
+            }
+        }
+
+        public string StepsLabel
+        {
+            get { return _stepsLabel; }
+            set
+            {
+                _stepsLabel = value;
+                OnPropertyChanged("StepsLabel");
+            }
+        }
+
+        public ICommand GoalsCommand { protected set; get; }
+        public ICommand Home { protected set; get; }
 
         public GoalsViewModel()
         {
-            StepGoal = "Goal: " + "0";
-            CalorieCount = "Todays Calories: " + "0";
-            CalorieGoal = "Goal: " + "0";
-            Demo = "demo.gif";
-            Demo2 = "demo2.gif";
+            Banner = "banner.png";
+            GoalLabel = "Goal:";
+
+            StepsLabel = "0";
+            DistanceLabel = "0";
+            CaloriesLabel = "0";
+
+            CurrentLabel = "Current: ";
+            GoalsLabel = "Goals: ";
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                StepCount = "Todays steps: " + DependencyService.Get<IStepCounterDependency>().Steps();
+                CurrentStepsLabel = DependencyService.Get<IStepCounterDependency>().Steps();
+
+                string temp = DependencyService.Get<IStepCounterDependency>().Steps();
+                double steps = Convert.ToDouble(temp);
+                double KM = steps / 1320;
+                string kilometers = Convert.ToString(KM);
+                CurrentDistanceLabel = kilometers;
+
                 return true;
             });
+
+            CurrentCaloriesLabel = "0";
+
+            Home = new Command(HomePage);
+
+
+            GoalsCommand = new Command(GoalView);
+        }
+
+        public void HomePage()
+        {
+            Application.Current.MainPage = new Views.Master();
+        }
+
+        public void GoalView()
+        {
+            Goals Goal = new Goals(EntrySteps, EntryDistance, EntryCalories);
+
+            StepsLabel = Goal.Steps;
+            DistanceLabel = Goal.Distance;
+            CaloriesLabel = Goal.Calories;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

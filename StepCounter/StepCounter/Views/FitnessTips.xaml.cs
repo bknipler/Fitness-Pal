@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StepCounter.ViewModels;
+
 using Xamarin.Forms;
 
 namespace StepCounter.Views
 {
-    public partial class Master
+    public partial class FitnessTips
     {
-        public Master()
+        public FitnessTips()
         {
             InitializeComponent();
-            BindingContext = new MasterViewModel();
+            BindingContext = new FitnessTipsViewModel();
         }
     }
 }
