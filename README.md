@@ -12,13 +12,19 @@ To open the application:
 *Please make sure that Visual Studio 15 and the Xamarin Plugin are up to date!
 *Runs on an emulator but won't count steps unless it's run on an android device (emulators can't simulate the correct sensors)
 1. Open StepCounter.sln
-2. Go Build -> Rebuild and allow the program to download the necessary packages (Shows progress at the buttom of VS - Usually take 1-2 minutes)
-3. Once loaded ran the project using Debug (ensure the android emulator or device you are using is above API 19)
-4. The app should now run inside of the emulator, but if you have any errors please follow these next steps
-    4.1 Delete the packages folder 
-    4.2 Rebuild the project so it grabs all the packages it needs 
-    4.3 Update only the xamarin.forms package (right click solution -> nugat manager) 
-    4.4 Clean solution
+2. Go Build -> Rebuild and allow the program to download the necessary packages (Shows progress at the buttom of VS - Usually take 1-2 minutes) ** (If this works go to step 5) **
+3. If you get embedding errors restart VS, they should be cleared.
+4. If the option to Debug the app on the emulator does not show up, please follow these steps
+    4.1 Close VS and in the main folder enabled viewing hidden folders
+    4.2 Copy the file in VSReplace to .vs -> StepCounter -> v14
+    4.3 Override the file that is currently there
+    4.4 Program should work on restart
+5. Once loaded ran the project using Debug (ensure the android emulator or device you are using is above API 19)
+6. The app should now run inside of the emulator, but if you have any errors please follow these next steps
+    6.1 Delete the packages folder 
+    6.2 Rebuild the project so it grabs all the packages it needs 
+    6.3 Update only the xamarin.forms package (right click solution -> nugat manager) 
+    6.4 Clean solution
 
 Using the Application
 1. The opening screen displays the amount of steps taken and the goal steps, as well as the amount of calories and goal calories(Only the step count will ever display a different value, the other values are not link up yet)
