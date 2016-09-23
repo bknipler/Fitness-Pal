@@ -12,7 +12,7 @@ To open the application:
 *Please make sure that Visual Studio 15 and the Xamarin Plugin are up to date!
 *Runs on an emulator but won't count steps unless it's run on an android device (emulators can't simulate the correct sensors)
 1. Open StepCounter.sln
-2. Go Build -> Rebuild and allow the program to download the necessary packages
+2. Go Build -> Rebuild and allow the program to download the necessary packages (Shows progress at the buttom of VS - Usually take 1-2 minutes)
 3. Once loaded ran the project using Debug (ensure the android emulator or device you are using is above API 19)
 4. The app should now run inside of the emulator, but if you have any errors please follow these next steps
     4.1 Delete the packages folder 
