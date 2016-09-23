@@ -8,12 +8,12 @@ using Xamarin.Forms;
 
 namespace StepCounter.Views
 {
-    public partial class Master
+    public partial class HealthIndicator : ContentPage
     {
-        public Master()
+        public HealthIndicator()
         {
             InitializeComponent();
-            BindingContext = new MasterViewModel();
+            BindingContext = new BMIViewModel();
         }
     }
 }

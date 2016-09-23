@@ -7,7 +7,11 @@
   <MasterDetailPage.Master>
     <ContentPage Title="Menu">
       <StackLayout Orientation="Vertical">
-        <Button Text="rand" Clicked="OnButtonClickedRand" />
+        <Label Text =" "/>
+        <Label Text =" "/>
+        <Button Text="Goals" Command="{Binding Goals}"/>
+        <Button Text="Health Indicator" Command="{Binding Health}"/>
+        <Button Text="Fitness Tips" Command="{Binding Tips}"/>
       </StackLayout>
     </ContentPage>
   </MasterDetailPage.Master>

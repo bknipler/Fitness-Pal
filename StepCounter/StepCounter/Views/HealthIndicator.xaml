@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StepCounter.Views.HealthIndicator">
+
+  <StackLayout VerticalOptions="Center">
+    <!--THIS LABEL SHALL DISPLAY THE CALCULATED BMI LATER-->
+    <Label Text="HELLO XAMARIN" XAlign="Center" />
+
+    <Entry Placeholder="NAME" Text="{Binding Name}"/>
+
+    <Label Text="WEIGHT (KG)" XAlign="Center" />
+    <Entry Placeholder="WEIGHT(KG)" Text="{Binding Weight}"/>
+
+    <Label Text="Height (M)" XAlign="Center" />
+    <Entry Placeholder="HEIGHT(M)" Text="{Binding Height}"/>
+
+    <!--NOTICE HOW THE BUTTON HAS NOT BEEN PROGRAMMED!-->
+    <Button Text="CALCULATE BMI" Command="{Binding CalculateBMI}" />
+    <Entry Placeholder="BMI" Text="{Binding Message}"/>
+    <Button Text="Home"
+Command="{Binding Home}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+  </StackLayout>
+
+</ContentPage>
