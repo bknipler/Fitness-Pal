@@ -16,7 +16,7 @@ To open the application:
 3. If you get embedding errors restart VS, they should be cleared.
 4. If the option to Debug the app on the emulator does not show up, please follow these steps
     4.1 Close VS and in the main folder enabled viewing hidden folders
-    4.2 Copy the file in VSReplace to .vs -> StepCounter -> v14
+    4.2 Copy the nameless .suo file to .vs -> StepCounter -> v14
     4.3 Override the file that is currently there
     4.4 Program should work on restart
 5. Once loaded ran the project using Debug (ensure the android emulator or device you are using is above API 19)
